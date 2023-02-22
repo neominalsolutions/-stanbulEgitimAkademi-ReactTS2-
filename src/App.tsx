@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Button from "./Button";
 
 function App() {
+  const btn1Click = () => {
+    alert("button1 clicked");
+  };
+
+  const btn2Click = () => {
+    alert("button2 clicked");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* new Button(); */}
+      {/* var btn = new Button()
+          btn.name = "Button1";
+      */}
+      <Button
+        name="Button1"
+        color="yellow"
+        onClicked={btn1Click}
+        onMouseOut={() => {
+          alert("Mouse out oldu");
+        }}
+      />
+      {/* kendi componentimize tıklandığını anlamak için props vasıtası ile event dinledik. */}
+      <Button
+        name="Button2"
+        bgColor="green"
+        color="white"
+        onClicked={btn2Click}
+      />
+      <p title="başlık"></p>
+      <div id="1"></div>
+      {/* <button onclick=""></button> */}
     </div>
   );
 }
